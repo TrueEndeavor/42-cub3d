@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:49:07 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/05 17:55:06 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:56:44 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 int	process_map_line(char *line, t_data *data)
 {
+	int		len;
+
+	len = ft_strlen(line);
+	if (len == 1 && line[len - 1] == '\n')
+		display_error("Empty line found in the map");
 	if (is_map_line(line))
 	{
 		if (ft_strlen(line) > 0 || line[0] == '\n')
@@ -39,7 +44,7 @@ void	process_line(t_data *data, char *line, bool *flags)
 		on_destroy(data);
 		return ;
 	}
-	trim_newline(line);
+	trim_newline(line, flags[0]);
 	if (!flags[0])
 	{
 		check_basic(data, line);

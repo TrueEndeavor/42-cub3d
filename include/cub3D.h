@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 12:00:14 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/06 15:35:05 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:51:02 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,7 @@ int					set_dup_map(t_data *data);
 void				trim_whitespace(char **line);
 void				cleanup_and_exit(t_data *data, char *line, int fd, int err);
 void				handle_error(t_data *data, bool tex_flag, bool col_flag);
-char				*trim_newline(char *str);
+char				*trim_newline(char *str, bool flag);
 int					is_texture_line(char *line);
 int					is_color_line(char *line);
 int					is_map_line(char *line);

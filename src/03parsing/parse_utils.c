@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 11:32:27 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/05 17:32:34 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:55:51 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,15 @@ void	trim_whitespace(char **line)
 	end[1] = '\0';
 }
 
-char	*trim_newline(char *str)
+char	*trim_newline(char *str, bool flag)
 {
 	int		len;
 
 	len = ft_strlen(str);
-	if (len > 0 && str[len - 1] == '\n')
+	if (!flag)
 	{
-		str[len - 1] = '\0';
+		if (len > 0 && str[len - 1] == '\n')
+			str[len - 1] = '\0';
 	}
 	return (str);
 }
