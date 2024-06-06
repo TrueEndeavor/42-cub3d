@@ -6,18 +6,19 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:49:07 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/06 15:56:44 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/06 16:25:14 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
+#include <stdio.h>
 
 int	process_map_line(char *line, t_data *data)
 {
 	int		len;
 
 	len = ft_strlen(line);
-	if (len == 1 && line[len - 1] == '\n')
+	if (is_map_line(line) && (len == 1 && line[len - 1] == '\n'))
 		display_error("Empty line found in the map");
 	if (is_map_line(line))
 	{
