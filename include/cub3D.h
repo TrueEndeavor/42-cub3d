@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogalio <rmouchel@student.42.fr>           +#+  +:+       +#+        */
+/*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 12:00:14 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/05 19:06:01 by rogalio          ###   ########.fr       */
+/*   Updated: 2024/06/06 15:35:05 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ typedef struct s_game
 {
 	double			pos_x;
 	double			pos_y;
+	char			player_dir;
 	double			move_speed;
 	double			rot_speed;
 	double			mouserot_speedfactor;

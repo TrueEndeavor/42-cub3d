@@ -6,11 +6,12 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:05:12 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/05 18:12:12 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:37:50 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
+#include <stdio.h>
 
 void	allocate_memory(t_data *data)
 {
@@ -36,6 +37,7 @@ void	initialize_world_map(t_data *data, int i, int j)
 	{
 		data->game.pos_x = i;
 		data->game.pos_y = j;
+		data->game.player_dir = data->dup_map[i][j];
 		data->world_map[i][j] = 0;
 	}
 	else
