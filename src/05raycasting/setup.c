@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:49:08 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/10 13:13:26 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/17 19:14:06 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	set_up(t_data *data)
 		on_destroy(data);
 		return (0);
 	}
+	// check before loading 
 	init_images(data);
 	return (1);
 }

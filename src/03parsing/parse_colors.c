@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:47:25 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/17 17:29:14 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/17 19:54:28 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void	get_color(char *line, int type, t_colors *colors)
 {
 	trim_whitespace(&line);
 	if (type == CEILING)
+	{
 		colors->ceiling.red = parse_int(&line);
+	//check fr the space...
+	}
 	if (type == FLOOR)
 		colors->floor.red = parse_int(&line);
 	if (*line == ',')

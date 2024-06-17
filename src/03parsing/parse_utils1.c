@@ -6,20 +6,23 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:22:29 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/17 17:41:57 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/17 19:51:48 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
+#include <stdio.h>
+
 
 int	parse_int(char **str)
 {
 	int	num;
 	int	sign;
 
+	printf("str = %s\n", *str);
 	num = 0;
 	sign = 1;
-	if (*str == NULL || **str == '\0' || **str == ',')
+	if (*str == NULL || **str == '\0' || **str == ',' || !ft_isdigit(**str) || **str == ' ')
 	{
 		return (-1);
 	}
