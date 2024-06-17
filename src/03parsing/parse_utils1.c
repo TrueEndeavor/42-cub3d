@@ -6,14 +6,13 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:22:29 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/17 19:51:48 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/17 20:59:23 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 #include <stdio.h>
-
-
+/* 
 int	parse_int(char **str)
 {
 	int	num;
@@ -22,7 +21,8 @@ int	parse_int(char **str)
 	printf("str = %s\n", *str);
 	num = 0;
 	sign = 1;
-	if (*str == NULL || **str == '\0' || **str == ',' || !ft_isdigit(**str) || **str == ' ')
+	if (*str == NULL || **str == '\0' || **str == ',' || \
+		!ft_isdigit(**str))
 	{
 		return (-1);
 	}
@@ -31,12 +31,68 @@ int	parse_int(char **str)
 		sign = -1;
 		(*str)++;
 	}
-	while (**str >= '0' && **str <= '9')
+	while (**str >= '0' && **str <= '9' && **str != '\0' && **str != ',')
 	{
+		if (num > 255) // Check for maximum value
+		{
+			return (-1);
+		}
+		printf("char = %c\n", **str);
+		if (**str == ' ') // Check for spaces within the number
+		{
+			return (-1);
+		}
 		num = num * 10 + (**str - '0');
 		(*str)++;
 	}
+	if (num < 0 || num > 255) // Check for minimum and maximum value
+	{
+		return (-1);
+	}
+      if (**str == '\0') // Check if the end of the string is reached without finding a comma
+	{
+		return (-1);
+	} 
 	return (num * sign);
+} */
+
+
+int parse_int(char **str)
+{
+	int num = 0;
+
+	while (**str == ' ') // Skip leading spaces
+	{
+		(*str)++;
+	}
+	if (!ft_isdigit(**str))
+		return (-1);
+	while (**str >= '0' && **str <= '9' && **str != ',' && **str != '\0')
+	{
+		if (num > 255) // Check for maximum value
+		{
+			return (-1);
+		}
+		num = num * 10 + (**str - '0');
+		(*str)++;
+	}
+
+	if (num < 0 || num > 255) // Check for minimum and maximum value
+	{
+		return (-1);
+	}
+
+	if (**str == ' ') // Check for trailing spaces
+	{
+		return (-1);
+	}
+
+	if (**str != '\0' && **str != ',') // Check for invalid characters
+	{
+		return (-1);
+	}
+
+	return num;
 }
 
 int	check_texture_file(char *file_name, t_data *data)
