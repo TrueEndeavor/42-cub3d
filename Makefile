@@ -6,7 +6,7 @@
 #    By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/15 13:43:15 by lannur-s          #+#    #+#              #
-#    Updated: 2024/06/05 14:08:21 by lannur-s         ###   ########.fr        #
+#    Updated: 2024/06/17 10:37:54 by lannur-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,17 +40,18 @@ SRCS			=	src/01main/cub3D.c \
 					src/03parsing/parse_utils.c	\
 					src/03parsing/parse_utils1.c	\
 					src/03parsing/parse_utils2.c	\
+					src/03parsing/parse_utils3.c	\
 					src/04mapvalidation/validate_map.c \
 					src/04mapvalidation/map_checks.c \
 					src/04mapvalidation/map_checks1.c \
 					src/04mapvalidation/player_check.c \
+					src/04mapvalidation/player_direction.c \
 					src/07error/error_handling.c \
 					src/03parsing/load_map.c \
 					src/dev/print_debug.c	\
 					src/dev/print_debug1.c	\
 					src/04mapvalidation/duplicate_map.c \
 					src/04mapvalidation/valid_map_utils.c \
-					src/06destroy/destroy.c \
 					src/05raycasting/setup.c \
 					src/05raycasting/load_textures.c \
 					src/05raycasting/events.c \
@@ -59,7 +60,9 @@ SRCS			=	src/01main/cub3D.c \
 					src/05raycasting/raycasting1.c \
 					src/05raycasting/move.c \
 					src/05raycasting/rotate.c \
-					src/05raycasting/draw.c
+					src/05raycasting/draw.c \
+					src/06destroy/destroy.c \
+					src/06destroy/destroy_maps.c
 
 OBJS_DIR = obj
 OBJS = $(SRCS:src/%.c=$(OBJS_DIR)/%.o)

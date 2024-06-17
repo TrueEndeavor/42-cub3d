@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:22:29 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/05 18:09:15 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/17 10:34:51 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,17 @@ void	check_basic(t_data *data, char *line)
 {
 	if (ft_strlen(line) <= 0 && !is_invalid_line(line))
 	{
-		display_error("Unknown texture/color line format");
+		display_error("Unknown texture/color line format", data);
 		on_destroy(data);
 		free(line);
+		line = NULL;
 		exit(EXIT_FAILURE);
 	}
+}
+
+void	initialize_flags(bool *flags)
+{
+	flags[0] = false;
+	flags[1] = false;
+	flags[2] = false;
 }
