@@ -6,41 +6,13 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:47:25 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/17 21:03:13 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/18 11:34:17 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-/* void	get_color(char *line, int type, t_colors *colors)
-{
-	trim_whitespace(&line);
-	if (type == CEILING)
-		colors->ceiling.red = parse_int(&line);
-	if (type == FLOOR)
-		colors->floor.red = parse_int(&line);
-	if (*line == ',')
-		line++;
-	trim_whitespace(&line);
-	if (type == CEILING)
-		colors->ceiling.green = parse_int(&line);
-	if (type == FLOOR)
-		colors->floor.green = parse_int(&line);
-	if (*line == ',')
-		line++;
-	trim_whitespace(&line);
-	if (type == CEILING)
-		colors->ceiling.blue = parse_int(&line);
-	if (type == FLOOR)
-		colors->floor.blue = parse_int(&line);
-	if (type == CEILING)
-		colors->ceiling_hex = rgb_to_hex(colors->ceiling);
-	if (type == FLOOR)
-		colors->floor_hex = rgb_to_hex(colors->floor);
-} */
-
-
-void get_color(char *line, int type, t_colors *colors)
+void	get_color(char *line, int type, t_colors *colors)
 {
 	trim_whitespace(&line);
 	if (type == CEILING)
@@ -66,7 +38,6 @@ void get_color(char *line, int type, t_colors *colors)
 		colors->floor_hex = rgb_to_hex(colors->floor);
 	}
 }
-
 
 int	get_color_type(const char *line)
 {
