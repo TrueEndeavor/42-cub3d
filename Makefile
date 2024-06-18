@@ -6,7 +6,7 @@
 #    By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/15 13:43:15 by lannur-s          #+#    #+#              #
-#    Updated: 2024/06/17 10:37:54 by lannur-s         ###   ########.fr        #
+#    Updated: 2024/06/18 13:09:41 by lannur-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ MLX_FLAGS = -L ./minilibx-linux -lmlx -lXext -lX11 -lm -lbsd
 LIBFT_DIR = ./include/libft_combined
 
 INCLUDES = -I./include -I$(LIBFT_DIR)/include -I./minilibx-linux
-#SRCS			=	src/01main/cub3D1.c
 
 SRCS			=	src/01main/cub3D.c \
 					src/02inputvalidation/arg_validation.c \
@@ -85,6 +84,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -rf $(OBJS_DIR)
 	cd $(LIBFT_DIR) && make fclean
 
 re: fclean all

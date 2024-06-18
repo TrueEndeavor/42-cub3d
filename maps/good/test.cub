@@ -1,7 +1,7 @@
-NO cub3D-tester/textures/wall.xpm
-SO cub3D-tester/textures/bricks.xpm
-WE cub3D-tester/textures/matrix.xpm
-EA cub3D-tester/textures/wood.xpm
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
 
 F 220,111,119
 C 225,111,0
