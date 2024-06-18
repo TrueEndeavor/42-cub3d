@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:49:07 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/18 12:41:32 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:50:16 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	init_data(t_data *data)
 	data->dup_map = NULL;
 	data->world_map = NULL;
 	data->exit_code = 0;
+	data->fd = 0;
 }
 
 void	initialize_game(t_game *game)

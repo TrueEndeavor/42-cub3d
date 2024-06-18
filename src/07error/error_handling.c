@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:33:13 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/18 12:44:19 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:27:58 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ int	display_error(char *str, t_data *data)
 	write(1, "[ERROR] ", 8);
 	ft_putstr_fd(str, 1);
 	write(1, "\n", 1);
-	data->exit_code = 1;
 	if (data)
+	{
+		data->exit_code = 1;
 		on_destroy(data);
+	}
 	exit (1);
 }
 

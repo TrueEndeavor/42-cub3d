@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 12:00:14 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/18 12:41:01 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:50:02 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,7 @@ typedef struct s_data
 	int				**world_map;
 	char			**dup_map;
 	int				exit_code;
+	int				fd;
 }	t_data;
 
 typedef struct s_cleanup_params

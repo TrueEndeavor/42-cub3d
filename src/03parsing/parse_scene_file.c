@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:49:07 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/18 11:48:34 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:50:34 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	parse_scene_file(t_data *data, char *scene_file)
 
 	initialize_flags(flags);
 	fd = check_readable(data, scene_file);
+	data->fd = fd;
 	params.data = data;
 	params.line = NULL;
 	params.fd = fd;
