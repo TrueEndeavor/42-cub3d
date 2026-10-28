@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:49:07 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/03 16:54:38 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:50:16 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	init_all_texures(t_textures *textures)
 	textures->east_texture = NULL;
 	textures->south_texture = NULL;
 	textures->west_texture = NULL;
+	textures->north_img = NULL;
+	textures->east_img = NULL;
+	textures->south_img = NULL;
+	textures->west_img = NULL;
 	textures->no_count = 0;
 	textures->ea_count = 0;
 	textures->so_count = 0;
@@ -50,6 +54,8 @@ void	init_data(t_data *data)
 	data->map = NULL;
 	data->dup_map = NULL;
 	data->world_map = NULL;
+	data->exit_code = 0;
+	data->fd = 0;
 }
 
 void	initialize_game(t_game *game)

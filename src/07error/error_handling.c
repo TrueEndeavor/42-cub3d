@@ -6,40 +6,46 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:33:13 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/04 09:24:57 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:27:58 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int	display_error(char *str)
+int	display_error(char *str, t_data *data)
 {
 	write(1, "[ERROR] ", 8);
 	ft_putstr_fd(str, 1);
 	write(1, "\n", 1);
+	if (data)
+	{
+		data->exit_code = 1;
+		on_destroy(data);
+	}
 	exit (1);
+}
+
+int	show_error(char *str)
+{
+	write(1, "[ERROR] ", 8);
+	ft_putstr_fd(str, 1);
+	write(1, "\n", 1);
+	return (1);
 }
 
 char	*get_error_message(int error_code)
 {
 	if (error_code == ERR_TEXTURE_MISSING_OR_DUPLICATED)
-	{
 		return ("Missing or duplicated texture definitions");
-	}
 	else if (error_code == ERR_TEXTURE_FILE_CANNOT_OPEN)
-	{
 		return ("Invalid texture definitions");
-	}
 	else if (error_code == ERR_COLOR_MISSING_OR_DUPLICATED)
-	{
 		return ("Missing or duplicated color definitions");
-	}
 	else if (error_code == ERR_COLOR_RGB_VALUES_MISSING)
-	{
 		return ("Invalid RGB values for one or more colors");
-	}
-	else
-	{
-		return ("Unknown error occurred");
-	}
+	else if (error_code == ERR_MAP_NOT_LAST)
+		return ("Map is not the last of the file");
+	else if (error_code == ERR_MAP_NOT_VALID)
+		return ("Either not a valid map or it is not the last");
+	return (NULL);
 }

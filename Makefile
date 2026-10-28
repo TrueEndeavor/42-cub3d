@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rogalio <rmouchel@student.42.fr>           +#+  +:+       +#+         #
+#    By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/15 13:43:15 by lannur-s          #+#    #+#              #
-#    Updated: 2024/06/04 15:42:39 by rogalio          ###   ########.fr        #
+#    Updated: 2024/06/18 13:09:41 by lannur-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ MLX_FLAGS = -L ./minilibx-linux -lmlx -lXext -lX11 -lm -lbsd
 LIBFT_DIR = ./include/libft_combined
 
 INCLUDES = -I./include -I$(LIBFT_DIR)/include -I./minilibx-linux
-#SRCS			=	src/01main/cub3D1.c
 
 SRCS			=	src/01main/cub3D.c \
 					src/02inputvalidation/arg_validation.c \
@@ -39,16 +38,19 @@ SRCS			=	src/01main/cub3D.c \
 					src/03parsing/parse_colors.c	\
 					src/03parsing/parse_utils.c	\
 					src/03parsing/parse_utils1.c	\
+					src/03parsing/parse_utils2.c	\
+					src/03parsing/parse_utils3.c	\
 					src/04mapvalidation/validate_map.c \
 					src/04mapvalidation/map_checks.c \
 					src/04mapvalidation/map_checks1.c \
 					src/04mapvalidation/player_check.c \
+					src/04mapvalidation/player_direction.c \
 					src/07error/error_handling.c \
 					src/03parsing/load_map.c \
 					src/dev/print_debug.c	\
+					src/dev/print_debug1.c	\
 					src/04mapvalidation/duplicate_map.c \
 					src/04mapvalidation/valid_map_utils.c \
-					src/06destroy/destroy.c \
 					src/05raycasting/setup.c \
 					src/05raycasting/load_textures.c \
 					src/05raycasting/events.c \
@@ -57,9 +59,11 @@ SRCS			=	src/01main/cub3D.c \
 					src/05raycasting/raycasting1.c \
 					src/05raycasting/move.c \
 					src/05raycasting/rotate.c \
-					src/05raycasting/draw.c
+					src/05raycasting/draw.c \
+					src/06destroy/destroy.c \
+					src/06destroy/destroy_maps.c
 
-OBJS_DIR = obs
+OBJS_DIR = obj
 OBJS = $(SRCS:src/%.c=$(OBJS_DIR)/%.o)
 
 $(NAME): $(LIBFT_DIR)/$(LIBFTNAME) $(OBJS)
@@ -80,6 +84,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -rf $(OBJS_DIR)
 	cd $(LIBFT_DIR) && make fclean
 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:36:05 by lannur-s          #+#    #+#             */
-/*   Updated: 2024/06/04 09:24:16 by lannur-s         ###   ########.fr       */
+/*   Updated: 2024/06/18 12:47:41 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	handle_args(int ac)
 {
 	if (!check_args(ac))
-		exit(0);
+		exit(1);
 }
 
 void	init_and_parse(t_data *data, char *file)
@@ -42,9 +42,9 @@ void	setup_hooks(t_data *data)
 {
 	mlx_hook(data->win_ptr, KeyRelease, KeyReleaseMask, &on_keypress, data);
 	mlx_hook(data->win_ptr, MotionNotify, PointerMotionMask, &on_mouse, data);
-	mlx_loop_hook(data->mlx_ptr, render, data);
 	mlx_hook(data->win_ptr, DestroyNotify, StructureNotifyMask, \
 		&on_destroy, data);
+	mlx_loop_hook(data->mlx_ptr, render, data);
 }
 
 int	main(int ac, char **av)
@@ -53,7 +53,6 @@ int	main(int ac, char **av)
 
 	handle_args(ac);
 	init_and_parse(&data, av[1]);
-	printf("map height and width = %d x %d\n", data.map_height, data.map_width);
 	initialize_mlx(&data);
 	setup_hooks(&data);
 	mlx_loop(data.mlx_ptr);
